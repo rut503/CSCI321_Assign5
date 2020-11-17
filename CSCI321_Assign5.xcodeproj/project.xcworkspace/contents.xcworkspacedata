@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CSCI321_Assign5.xcodeproj">
+      location = "self:/Users/rut/Desktop/CSCI321_Assign5/CSCI321_Assign5.xcodeproj">
    </FileRef>
 </Workspace>
