@@ -1,9 +1,11 @@
 //
 //  SceneDelegate.swift
-//  CSCI321_Assign5
+//  321_assign4
 //
-//  Created by Rutvik Patel on 11/12/20.
-//  Copyright © 2020 Rut Codes. All rights reserved.
+//  Created by Rutvik Patel (Z1865128).
+//  Created by Aviraj Parmar (Z1861160).
+//
+//  Copyright © 2020 Aviraj. All rights reserved.
 //
 
 import UIKit
