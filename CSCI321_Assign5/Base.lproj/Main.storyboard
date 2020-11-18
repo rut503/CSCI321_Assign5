@@ -26,7 +26,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="_21_assign4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="CSCI321_Assign5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +105,7 @@
                     <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="dateLabel" destination="nD4-cg-3xK" id="b4i-WB-QDq"/>
+                        <outlet property="imageView" destination="2IT-1H-r9u" id="Rzu-sJ-xCs"/>
                         <outlet property="nameLabel" destination="zEE-fY-nHl" id="NMf-M0-Zvj"/>
                         <outlet property="nickNameLabel" destination="UKZ-Oc-eeD" id="bFp-ge-Fsk"/>
                         <outlet property="numberLabel" destination="jsZ-aj-fAi" id="QsX-eL-OEH"/>
@@ -132,27 +133,27 @@
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="_21_assign4" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="CSCI321_Assign5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" detailTextLabel="cJd-yN-nqH" style="IBUITableViewCellStyleSubtitle" id="WCw-Qf-5nD">
-                                <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="62.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="16" y="9" width="38" height="24"/>
+                                            <rect key="frame" x="16" y="12" width="38" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cJd-yN-nqH">
-                                            <rect key="frame" x="16" y="33" width="44" height="14.5"/>
+                                            <rect key="frame" x="16" y="36" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -187,7 +188,7 @@
         <!--Add President-->
         <scene sceneID="Hd9-uQ-yGl">
             <objects>
-                <tableViewController id="dyp-vw-y5a" customClass="AddCharacterViewController" customModule="_21_assign4" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dyp-vw-y5a" customClass="AddCharacterViewController" customModule="CSCI321_Assign5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="t8q-I3-xc3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

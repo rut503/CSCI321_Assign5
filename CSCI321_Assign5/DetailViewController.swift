@@ -22,11 +22,22 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!             //Date Label
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var imageStore: ImageStore?
     /**
      Update the user interface for the detail item.
      */
     func configureView() {
         if let detail = detailItem {
+            
+            if let imageView = imageView, let imageStore = imageStore {
+                imageStore.downloadImage(with: detail.imageUrlString, completion: {
+                    (image: UIImage?) in
+                    
+                    imageView.image = image
+                })
+            }
             // name of the president
             if let label = nameLabel {
                 label.text = detail.name

@@ -14,6 +14,8 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [President]()
+    
+    let imageStore = ImageStore()
 
 
     override func viewDidLoad() {
@@ -99,6 +101,7 @@ class MasterViewController: UITableViewController {
                 let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
+                controller.imageStore = imageStore
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 detailViewController = controller
