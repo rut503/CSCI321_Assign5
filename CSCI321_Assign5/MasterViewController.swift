@@ -1,6 +1,6 @@
 //
 //  MasterViewController.swift
-//  321_assign4
+//  CSCI321_assign5
 //
 //  Created by Rutvik Patel (Z1865128).
 //  Created by Aviraj Parmar (Z1861160).
@@ -25,24 +25,67 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        downloadJSONData()
         
+    }
+    
+    func downloadJSONData() {
         //Read president.plist and throws an error if is unsuccessfull
-        guard let path = Bundle.main.path(forResource: "presidents", ofType: "plist"), let xml = FileManager.default.contents(atPath: path) else {
-            fatalError("Unable to access property list president.plist")
+        guard let url = URL(string: "https://www.prismnet.com/~mcmahon/CS321/presidents.json") else {
+            showAlert(message: "Invalid URL for JSON data")
+            return
         }
         
-        //property to sort President list through number provided or throw an error if unsuccessfull.
-        do {
-            objects = try PropertyListDecoder().decode([President].self, from: xml)
-            objects.sort {
-                return $0.number < $1.number
+        weak var weakSelf = self
+        
+        let task = URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+
+        let httpResponse = response as? HTTPURLResponse
+
+        if httpResponse!.statusCode != 200 {
+            // Perform some error handling
+            // UI updates, like alerts, should be directed to the main thread
+            DispatchQueue.main.async {
+                weakSelf!.showAlert( message:"HTTP Error: status code \(httpResponse!.statusCode)")
             }
-        } catch {
-            fatalError("Unable to access decode property list")
-            
+        } else if (data == nil && error != nil) {
+            // Perform some error handling
+            DispatchQueue.main.async {
+                weakSelf!.showAlert( message:"No data downloaded")
+            }
+        } else {
+            // Download succeeded
+            do {
+                weakSelf!.objects = try JSONDecoder().decode([President].self, from: data!)
+                weakSelf!.objects.sort {
+                    return $0.number < $1.number
+                }
+                
+                DispatchQueue.main.async {
+                    weakSelf!.tableView!.reloadData()
+                }
+                
+            } catch {
+                weakSelf!.showAlert(message: "Unable to decode JSON data")
+                
+                }
+            }
         }
+        task.resume()
     }
 
+    func showAlert( message: String) {
+        
+        let alertController = UIAlertController(title: "Error", message: message,preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
