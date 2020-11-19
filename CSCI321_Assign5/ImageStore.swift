@@ -14,6 +14,9 @@ class ImageStore {
     
     let imageCache = NSCache<NSString, AnyObject>()
     
+    /**
+     Function which deals with imageUrl and saves the image. If there is no image found it uses the deafault image image which is "seal.png"
+     */
     func downloadImage(with urlString: String, completion: @escaping ( _ image: UIImage?) -> Void)  {
         
         if urlString == "None" {
@@ -63,6 +66,7 @@ class ImageStore {
                     }
                 }
                 task.resume()
+            
            } else {
                 DispatchQueue.main.async {
                     print("No data downloaded for \(urlString)")
@@ -72,6 +76,9 @@ class ImageStore {
         }
     }
     
+    /**
+     Function which clears out previously stored image
+     */
     func clearCache() {
         imageCache.removeAllObjects()
     }

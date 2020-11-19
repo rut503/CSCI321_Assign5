@@ -15,6 +15,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [President]()
     
+    //variable to store image
     let imageStore = ImageStore()
 
 
@@ -31,8 +32,13 @@ class MasterViewController: UITableViewController {
         
     }
     
+    /**
+     Function to read data from JSON link and save it in respective fields. It also checks for errors and throws it if found one.
+     
+     - Parameter: None
+     */
     func downloadJSONData() {
-        //Read president.plist and throws an error if is unsuccessfull
+        //Read president list through JSON and throws an error if is unsuccessfull
         guard let url = URL(string: "https://www.prismnet.com/~mcmahon/CS321/presidents.json") else {
             showAlert(message: "Invalid URL for JSON data")
             return
@@ -77,6 +83,12 @@ class MasterViewController: UITableViewController {
         task.resume()
     }
 
+    /**
+     Function to print out an error statement if found one.
+     
+     - Parameter: String: pass a error message which is to be printed if found an error
+     
+     */
     func showAlert( message: String) {
         
         let alertController = UIAlertController(title: "Error", message: message,preferredStyle: .alert)
@@ -101,7 +113,7 @@ class MasterViewController: UITableViewController {
                 let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
-                controller.imageStore = imageStore
+                controller.imageStore = imageStore                 //store an image
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 detailViewController = controller
@@ -138,12 +150,13 @@ class MasterViewController: UITableViewController {
         
         let object = objects[indexPath.row]
         
+        // contents to show on table cell: image view, name, political party
         imageStore.downloadImage(with: object.imageUrlString, completion: {
             (image: UIImage?) in
             cell.characterImageView.image = image
         })
-        cell.nameLabel!.text = object.name
-        cell.partyLabel!.text = object.politicalParty
+        cell.nameLabel!.text = object.name                        //name label object
+        cell.partyLabel!.text = object.politicalParty             //political party label object
         return cell
     }
 

@@ -22,13 +22,16 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!             //Date Label
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!         //President Image outlet
     
     var imageStore: ImageStore?
     /**
      Update the user interface for the detail item.
      */
     func configureView() {
+        
+        //image Url
+        //stores the url and save the image in image to display it
         if let detail = detailItem {
             
             if let imageView = imageView, let imageStore = imageStore {
