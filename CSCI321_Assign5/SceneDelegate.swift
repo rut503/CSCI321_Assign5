@@ -1,11 +1,9 @@
 //
 //  SceneDelegate.swift
-//  321_assign4
+//  CSCI321_assign5
 //
 //  Created by Rutvik Patel (Z1865128).
 //  Created by Aviraj Parmar (Z1861160).
-//
-//  Copyright © 2020 Aviraj. All rights reserved.
 //
 
 import UIKit
