@@ -1,9 +1,9 @@
 //
 //  CharacterCell.swift
-//  CSCI321_Assign5
+//  CSCI321_assign5
 //
-//  Created by Aviraj Parmar on 11/19/20.
-//  Copyright © 2020 Aviraj. All rights reserved.
+//  Created by Rutvik Patel (Z1865128).
+//  Created by Aviraj Parmar (Z1861160).
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
     /**
     A coco touch class which deal with custom Table view cell with Image view, Name label and a Political party label
     */
-class CharacterCell: UITableViewCell {
+class PresidentCell: UITableViewCell {
 
     // image view outlet
     @IBOutlet weak var characterImageView: UIImageView!

@@ -5,8 +5,6 @@
 //  Created by Rutvik Patel (Z1865128).
 //  Created by Aviraj Parmar (Z1861160).
 //
-//  Copyright © 2020 Aviraj. All rights reserved.
-//
 
 import UIKit
 
@@ -146,7 +144,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CharacterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PresidentCell
         
         let object = objects[indexPath.row]
         
