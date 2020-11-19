@@ -16,8 +16,8 @@
 		4A616D89254859F800F5ECA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A616D88254859F800F5ECA0 /* Assets.xcassets */; };
 		4A616D8C254859F800F5ECA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A616D8A254859F800F5ECA0 /* LaunchScreen.storyboard */; };
 		4A616D942548698F00F5ECA0 /* President.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A616D932548698E00F5ECA0 /* President.swift */; };
-		4A616D962548751300F5ECA0 /* presidents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A616D952548751300F5ECA0 /* presidents.plist */; };
 		4A71749E25659EF700ED8218 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A71749D25659EF700ED8218 /* ImageStore.swift */; };
+		4A7174A02566B8F300ED8218 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A71749F2566B8F300ED8218 /* CharacterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		4A616D8B254859F800F5ECA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A616D8D254859F800F5ECA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A616D932548698E00F5ECA0 /* President.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = President.swift; sourceTree = "<group>"; };
-		4A616D952548751300F5ECA0 /* presidents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = presidents.plist; sourceTree = "<group>"; };
 		4A71749D25659EF700ED8218 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		4A71749F2566B8F300ED8218 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +71,10 @@
 				4A616D81254859F800F5ECA0 /* MasterViewController.swift */,
 				4A616D83254859F800F5ECA0 /* DetailViewController.swift */,
 				4A71749D25659EF700ED8218 /* ImageStore.swift */,
+				4A71749F2566B8F300ED8218 /* CharacterCell.swift */,
 				4A616D932548698E00F5ECA0 /* President.swift */,
 				4A029807254B1A34000F15F4 /* AddPresidentViewController.swift */,
 				4A616D85254859F800F5ECA0 /* Main.storyboard */,
-				4A616D952548751300F5ECA0 /* presidents.plist */,
 				4A616D88254859F800F5ECA0 /* Assets.xcassets */,
 				4A616D8A254859F800F5ECA0 /* LaunchScreen.storyboard */,
 				4A616D8D254859F800F5ECA0 /* Info.plist */,
@@ -143,7 +143,6 @@
 				4A616D8C254859F800F5ECA0 /* LaunchScreen.storyboard in Resources */,
 				4A616D89254859F800F5ECA0 /* Assets.xcassets in Resources */,
 				4A616D87254859F800F5ECA0 /* Main.storyboard in Resources */,
-				4A616D962548751300F5ECA0 /* presidents.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +156,7 @@
 				4A029808254B1A34000F15F4 /* AddPresidentViewController.swift in Sources */,
 				4A616D7E254859F800F5ECA0 /* AppDelegate.swift in Sources */,
 				4A616D80254859F800F5ECA0 /* SceneDelegate.swift in Sources */,
+				4A7174A02566B8F300ED8218 /* CharacterCell.swift in Sources */,
 				4A616D82254859F800F5ECA0 /* MasterViewController.swift in Sources */,
 				4A616D942548698F00F5ECA0 /* President.swift in Sources */,
 				4A71749E25659EF700ED8218 /* ImageStore.swift in Sources */,

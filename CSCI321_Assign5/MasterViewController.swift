@@ -134,10 +134,16 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CharacterCell
+        
         let object = objects[indexPath.row]
-        cell.textLabel!.text = object.name
-        cell.detailTextLabel!.text = object.politicalParty
+        
+        imageStore.downloadImage(with: object.imageUrlString, completion: {
+            (image: UIImage?) in
+            cell.characterImageView.image = image
+        })
+        cell.nameLabel!.text = object.name
+        cell.partyLabel!.text = object.politicalParty
         return cell
     }
 
